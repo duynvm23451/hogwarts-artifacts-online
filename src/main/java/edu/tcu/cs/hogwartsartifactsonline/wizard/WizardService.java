@@ -57,11 +57,6 @@ public class WizardService {
                 () -> new ObjectNotFoundException("wizard",wizardId)
         );
 
-//        if (artifact.getOwner() != null) {
-//            Wizard currentOwner = artifact.getOwner();
-//            currentOwner.removeArtifact(artifact);
-//        }
-
         wizard.addArtifact(artifact);
         wizardRepository.save(wizard);
 
