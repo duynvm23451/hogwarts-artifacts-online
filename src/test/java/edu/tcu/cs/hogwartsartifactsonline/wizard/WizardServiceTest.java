@@ -1,6 +1,6 @@
 package edu.tcu.cs.hogwartsartifactsonline.wizard;
 
-import edu.tcu.cs.hogwartsartifactsonline.artifact.ArtifactNotFoundException;
+import edu.tcu.cs.hogwartsartifactsonline.system.exception.ObjectNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -104,7 +104,7 @@ class WizardServiceTest {
                 .willReturn(Optional.empty());
 
         // When
-        assertThrows(WizardNotFoundException.class, () -> {
+        assertThrows(ObjectNotFoundException.class, () -> {
             wizardService.findById(1);
         });
 
@@ -142,7 +142,7 @@ class WizardServiceTest {
                 .willReturn(Optional.empty());
 
         // When
-        assertThrows(WizardNotFoundException.class, () -> {
+        assertThrows(ObjectNotFoundException.class, () -> {
             wizardService.update(1, update);
         });
 
@@ -174,7 +174,7 @@ class WizardServiceTest {
         given(wizardRepository.findById(1)).willReturn(Optional.empty());
 
         // When
-        assertThrows(WizardNotFoundException.class, () -> {
+        assertThrows(ObjectNotFoundException.class, () -> {
             wizardService.delete(1);
         });
 
